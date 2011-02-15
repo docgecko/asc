@@ -38,4 +38,16 @@ function average_sick_days(sick_days, employee) {
 	return isNaN(average_sick_days) ? $('input#calculator_average_sick_days').val("") : $('input#calculator_average_sick_days').val(average_sick_days);
 };
 
-	
+//Observe Revenue fields
+$(document).ready(function(){
+	$('input#calculator_revenue').live('keyup', function(event) {
+		var revenue = $('input#calculator_revenue').val();
+		var employee = $('input#calculator_employee').val();
+		average_revenue(revenue, employee);
+	});
+});
+
+function average_revenue(revenue, employee) {
+	var average_revenue = (revenue / employee).toFixed(2);
+	return isNaN(average_revenue) ? $('input#calculator_revenue_employee').val("") : $('input#calculator_revenue_employee').val(average_revenue);
+};	
