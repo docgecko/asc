@@ -1,0 +1,8 @@
+= f.inputs :name => "Absence Sick Information" do
+
+	= f.input :sick_days, :label => "Total Lost Absence or Sick Days"
+	= f.input :employee, :as => :hidden
+	%li.string.optional#calculator_average_sick_days_input
+		= label_tag 'calculator_average_sick_days', 'Average Sick Days per Employee'
+		= text_field_tag 'calculator_average_sick_days', '', :name => 'calculator[average_sick_days]', :size => 50, :disabled => true
+		%p.inline-hints This value will automatically update	

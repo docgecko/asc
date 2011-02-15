@@ -1,0 +1,8 @@
+= f.inputs :name => "Employee Details" do
+
+	= f.input :salary, :label => "Total Salary Costs (£)", :hint => "Annual sum of salaries for all employees"
+	= f.input :employee, :label => "Total No. of Employees", :hint => "Total number of employees in your company"
+	%li.string.optional#calculator_average_salary_input
+		= label_tag 'calculator_average_salary', 'Average Salary per Employee (£)'
+		= text_field_tag 'calculator_average_salary', '', :name => 'calculator[average_salary]', :size => 50, :disabled => true
+		%p.inline-hints This value will automatically update

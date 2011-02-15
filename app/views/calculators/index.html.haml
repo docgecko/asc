@@ -1,0 +1,25 @@
+%h1 Completed Sickness Absence Calculations
+
+%table
+  %tr
+    %th Total salaries
+    %th Total employees
+    %th Average sick days
+    %th Total lost revenue
+    %th
+    %th
+    %th
+
+  - @calculators.each do |calculator|
+    %tr
+      %td= calculator.salary
+      %td= calculator.employee
+      %td= calculator.sick_days
+      %td= calculator.revenue
+      %td= link_to 'Show', calculator
+      %td= link_to 'Edit', edit_calculator_path(calculator)
+      %td= link_to 'Destroy', calculator, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Calculator', new_calculator_path

@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Total salaries:
+  = @calculator.salary
+%p
+  %b Total number of employees:
+  = @calculator.employee
+%p
+  %b Average sick days per year:
+  = @calculator.sick_days
+%p
+  %b Total lost revenue per year:
+  = @calculator.revenue
+
+= link_to 'Edit', edit_calculator_path(@calculator)
+\|
+= link_to 'Back', calculators_path
