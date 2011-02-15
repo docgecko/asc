@@ -25,15 +25,15 @@ class Calculator
   end
   
   def average_salary
-    (salary / employee).infinite? or (salary / employee).nan? ? "" : sprintf( "%.02f" , (salary / employee))
+    salary.to_f.nan? or employee.to_f.nan? or (sick_days.to_f / employee.to_f).nan? ? "" : sprintf( "%.02f" , (salary.to_f / employee.to_f))
   end
   
   def average_sick_days
-    (sick_days / employee).nan? ? "" : sprintf( "%.02f" , (sick_days / employee))
+    (sick_days.to_f / employee.to_f).nan? ? "" : sprintf( "%.02f" , (sick_days.to_f / employee.to_f))
   end
   
   def revenue_employee
-    (revenue / employee).nan? ? "" : sprintf( "%.02f" , (revenue / employee))
+    (revenue.to_f / employee.to_f).nan? ? "" : sprintf( "%.02f" , (revenue.to_f / employee.to_f))
   end
   
   def steps
