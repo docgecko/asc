@@ -1,0 +1,17 @@
+= f.inputs :name => "Savings Made by Reducing Absence-Sick Days" do
+	= f.input :sick_days_reduction, :label => "Enter Reduced Number of Absence or Sick Days per Employee?", :hint => "Annual reduction in absence and sick days per employee"
+	= f.input :new_sick_days, :label => "New Absence or Sick Days per Employee", :hint => "(value will update automatically)", :input_html => { :disabled => true }
+	= f.input :total_savings, :label => "Total Salary & Revenue Savings (£)", :hint => "Savings due to reduced absence and sick days (value will update automatically)", :input_html => { :disabled => true }
+	= f.input :employee_savings, :label => "Salary & Revenue Savings per Employee (£)", :hint => "(value will update automatically)", :input_html => { :disabled => true }
+
+= f.inputs :name => "Summary of Current Employee and Absence-Sick Days Data" do
+	= f.input :employee, :label => "Total No. of Employees", :hint => "Total number of employees in your company", :input_html => { :disabled => true }
+	= f.input :sick_days, :label => "Current Total Absence or Sick Days", :hint => "Annually for all employees", :input_html => { :disabled => true }
+	= f.input :average_sick_days, :label => "Current Average Sick Days per Employee", :hint => "Equals the total absence or sick days divided by no. of employees", :input_html => { :disabled => true }
+
+= f.inputs :name => "Summary of Current Salary & Revenue Losses" do
+	= f.input :total_salary_sick_days, :label => "Total Salary Cost of Absence or Sick Days (£)", :hint => "This value is based on 260 working days per year (value will update automatically)", :input_html => { :disabled => true }
+	/ = f.input :employee_salary_sick_days, :label => "Individual Employee Salary Cost of Absence or Sick Days (£)", :hint => "(value will update automatically)", :input_html => { :disabled => true }
+	= f.input :revenue, :label => "Total Sales & Revenue Losses (£)", :hint => "Annual sum of losses caused by all employees", :input_html => { :disabled => true }
+	/ = f.input :revenue_employee, :label => "Average Sales & Revenue Loss per Employee (£)", :hint => "(value will update automatically)", :input_html => { :disabled => true }
+	= f.input :total_losses, :label => "Combined Total Losses (£)", :hint => "Sum of salary and revenue losses", :input_html => { :disabled => true }

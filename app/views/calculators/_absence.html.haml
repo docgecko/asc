@@ -1,5 +1,10 @@
-= f.inputs :name => "Absence Sick Information" do
+= f.inputs :name => "Actual Absence and Sick Days" do
 
 	= f.input :sick_days, :label => "Total Absence or Sick Days", :hint => "Annually for all employees"
 	= f.input :employee, :as => :hidden
-	= f.input :average_sick_days, :label => "Average Sick Days per Employee", :hint => "This value will automatically update", :input_html => { :disabled => true }
+	= f.input :salary, :as => :hidden
+	= f.input :average_sick_days, :label => "Average Absence Days per Employee", :hint => "(value will update automatically)", :input_html => { :disabled => true }
+
+= f.inputs :name => "Salary Costs of Absence and Sick Days" do
+	= f.input :total_salary_sick_days, :label => "Total Salary Cost of Absence or Sick Days (£)", :hint => "This value is based on 260 working days per year (value will update automatically)", :input_html => { :disabled => true }
+	= f.input :employee_salary_sick_days, :label => "Individual Employee Salary Cost of Absence or Sick Days (£)", :hint => "(value will update automatically)", :input_html => { :disabled => true }

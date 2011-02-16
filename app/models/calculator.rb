@@ -4,8 +4,9 @@ class Calculator
   field :employee, :type => Integer, :default => 0
   field :sick_days, :type => Float, :default => 0.000
   field :revenue, :type => Float, :default => 0.000
+  field :sick_days_reduction, :type => Float, :default => 0.000
   
-  attr_accessible :salary, :employee, :sick_days, :revenue
+  attr_accessible :salary, :employee, :sick_days, :revenue, :sick_days_reduction
   attr_writer :current_step
   
   validates_presence_of :salary, :if => lambda { |c| c.current_step == 'employee' }, :message => '"must not be blank"'
@@ -36,8 +37,32 @@ class Calculator
     (revenue.to_f / employee.to_f).nan? ? "" : sprintf( "%.02f" , (revenue.to_f / employee.to_f))
   end
   
+  def total_salary_sick_days
+    sprintf( "%.02f" , (salary.to_f / employee.to_f * sick_days.to_f / 260))
+  end
+  
+  def employee_salary_sick_days
+    sprintf( "%.02f" , (salary.to_f / employee.to_f * sick_days.to_f / 260 / employee.to_f))
+  end
+  
+  def new_sick_days
+    sick_days.to_f == 0.0 ? "" : sprintf( "%.02f" , (sick_days.to_f / employee - sick_days_reduction.to_f))
+  end
+  
+  def total_losses
+    revenue.to_f + total_salary_sick_days.to_f
+  end
+  
+  def total_savings
+    sprintf( "%.02f", (total_losses.to_f * (sick_days_reduction.to_f * employee.to_f) / sick_days.to_f))
+  end
+  
+  def employee_savings
+    sprintf( "%.02f", (total_savings.to_f / employee.to_f))
+  end
+  
   def steps
-    %w[employee absence production result]    
+    %w[employee absence production savings]    
   end
   
   def next_step

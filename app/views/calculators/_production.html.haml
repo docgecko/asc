@@ -1,5 +1,7 @@
-= f.inputs :name => "Sales, Business & Production Losses" do
+= f.inputs :name => "Sales, Business & Revenue Losses" do
 
 	= f.input :revenue, :label => "Total Sales & Revenue Losses (£)", :hint => "Annual sum of losses caused by all employees"
+	= f.input :salary, :as => :hidden
 	= f.input :employee, :as => :hidden
-	= f.input :revenue_employee, :label => "Average Sales & Revenue Loss per Employee", :hint => "This value will automatically update", :input_html => { :disabled => true }
+	= f.input :sick_days, :as => :hidden
+	= f.input :revenue_employee, :label => "Average Sales & Revenue Loss per Employee (£)", :hint => "(value will update automatically)", :input_html => { :disabled => true }

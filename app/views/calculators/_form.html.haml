@@ -9,4 +9,6 @@
 	
 	.actions
 		= f.submit 'Continue'
+		%br
+		%br
 		= f.submit 'Back', :name => 'back_button' unless @calculator.first_step?
