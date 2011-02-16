@@ -1,5 +1,6 @@
 %h1 Sickness Absence Calculator
 
 = render 'form'
-%br
-= link_to 'Back', calculators_path
+-if user_signed_in?
+	%br
+	= link_to 'Back', calculators_path

@@ -60,3 +60,17 @@ a {
 
 .error_messages ul {
   margin: 0; }
+
+ul.hmenu {
+  float: right;
+  list-style: none;
+  margin: 0 0 2em;
+  padding: 0; }
+  ul.hmenu li {
+    display: inline; }
+
+p.notice {
+  color: green; }
+
+p.alert {
+  color: red; }

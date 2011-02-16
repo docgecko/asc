@@ -1,4 +1,6 @@
 class CalculatorsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:new, :create, :show]
+  
   def index
     session[:calculator_step] = session[:calculator_params] = nil
     @calculators = Calculator.all
@@ -32,7 +34,7 @@ class CalculatorsController < ApplicationController
       render :action => 'new'
     else
       session[:calculator_step] = session[:calculator_params] = nil
-      flash[:notice] = "Successfully saved calculation."
+      flash[:notice] = "Congratulations, you successfully ran an Absence & Sickness Calculation."
       redirect_to @calculator
     end
   end

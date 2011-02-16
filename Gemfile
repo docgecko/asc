@@ -36,9 +36,12 @@ gem "haml", ">= 3.0.0"
 gem "haml-rails"
 # gem 'inherited_resources', '~> 1.2.1'
 gem 'formtastic', '~> 1.1.0'
+gem 'heroku', '1.17.13'
 
 group :development do
-		gem 'nifty-generators'
+	gem 'nifty-generators'
+	gem 'hpricot', '0.8.3'
+	gem 'ruby_parser', '2.0.5'
 # 	gem 'populator', '0.2.5'
 # 	gem 'faker', '0.9.5'
 # 	gem 'random_data', '1.5.2'

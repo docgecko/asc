@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+puts 'EMPTY THE MONGODB DATABASE'
+Mongoid.master.collections.reject { |c| c.name =~ /^system./}.each(&:drop)
+puts 'SETTING UP DEFAULT USER LOGIN'
+user = User.create! :name => 'docgecko', :email => 'daren.sdw@gmail.com', :password => 'Ma1andra', :password_confirmation => 'Ma1andra'
+puts 'New user created: ' << user.name
