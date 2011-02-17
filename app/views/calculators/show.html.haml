@@ -11,7 +11,7 @@
 		%td
 			%b Total No. of Employees:
 		%td
-			= @calculator.employee
+			= sprintf( "%.0f", @calculator.employee)
 			
 	%tr
 		%td{:colspan => 2}
@@ -20,12 +20,12 @@
 		%td
 			%b Total Absence or Sick Days:
 		%td
-			= @calculator.sick_days
+			= sprintf( "%.02f", @calculator.sick_days)
 	%tr
 		%td
 			%b Average Absence Days per Employee:
 		%td
-			= @calculator.average_sick_days
+			= sprintf( "%.02f", @calculator.average_sick_days)
 			
 	%tr
 		%td{:colspan => 2}
@@ -62,12 +62,12 @@
 		%td
 			%b Reduced Number of Absence or Sick Days per Employee:
 		%td
-			= @calculator.sick_days_reduction
+			= sprintf( "%.02f", @calculator.sick_days_reduction)
 	%tr
 		%td
 			%b New Absence or Sick Days per Employee:
 		%td
-			= @calculator.new_sick_days
+			= sprintf( "%.02f", @calculator.new_sick_days)
 	%tr
 		%td
 			%b Total Salary & Revenue Savings:
