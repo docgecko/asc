@@ -20,12 +20,12 @@
 		%td
 			%b Total Absence or Sick Days:
 		%td
-			= number_to_currency @calculator.sick_days, :unit => "£"
+			= @calculator.sick_days
 	%tr
 		%td
 			%b Average Absence Days per Employee:
 		%td
-			= number_to_currency @calculator.average_sick_days, :unit => "£"
+			= @calculator.average_sick_days
 			
 	%tr
 		%td{:colspan => 2}
