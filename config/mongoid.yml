@@ -16,8 +16,5 @@ test:
 
 # set these environment variables on your prod server
 production:
-  host: <%= ENV['MONGOID_HOST'] %>
-  port: <%= ENV['MONGOID_PORT'] %>
-  username: <%= ENV['MONGOID_USERNAME'] %>
-  password: <%= ENV['MONGOID_PASSWORD'] %>
-  database: <%= ENV['MONGOID_DATABASE'] %>
+  <<: *defaults
+  uri: <%= ENV['mongodb://heroku:ym28h6ww0gxz5dq92o7v5e@flame.mongohq.com:27069/app446485'] %>

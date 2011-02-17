@@ -145,14 +145,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bson_ext (~> 1.2)
+  bson_ext (~> 1.2.2)
   capybara
   cucumber-rails
   devise (~> 1.1.6)
   formtastic (~> 1.1.0)
   haml (>= 3.0.0)
   hpricot (= 0.8.3)
-  mongoid (>= 2.0.0.beta.19)
+  mongoid (~> 2.0.0.beta.20)
   nifty-generators
   rails (= 3.0.4)
   rspec-rails (>= 2.0.1)

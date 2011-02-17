@@ -29,8 +29,8 @@ gem 'rails', '3.0.4'
 #   gem 'webrat'
 # end
 
-gem "mongoid", ">= 2.0.0.beta.19"
-gem "bson_ext", "~> 1.2"
+gem "mongoid", "~> 2.0.0.beta.20"
+gem "bson_ext", "~> 1.2.2"
 gem "devise", "~> 1.1.6"
 gem "haml", ">= 3.0.0"
 # gem "haml-rails"
