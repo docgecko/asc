@@ -1,11 +1,18 @@
 defaults: &defaults
   host: localhost
-  # slaves:
-  #   - host: slave1.local
-  #     port: 27018
-  #   - host: slave2.local
-  #     port: 27019
-
+  slaves:
+    - host: slave1.local
+      port: 27018
+    - host: slave2.local
+      port: 27019
+  autocreate_indexes: false
+  allow_dynamic_fields: true
+  include_root_in_json: false
+  parameterize_keys: true
+  persist_in_safe_mode: false
+  raise_not_found_error: true
+  reconnect_time: 3
+      
 development:
   <<: *defaults
   database: asc_development
@@ -17,4 +24,6 @@ test:
 # set these environment variables on your prod server
 production:
   <<: *defaults
-  uri: <%= ENV['mongodb://heroku:ym28h6ww0gxz5dq92o7v5e@flame.mongohq.com:27069/app446485'] %>
+  host: <%= ENV['MONGOID_HOST'] %>
+  port: <%= ENV['MONGOID_PORT'] %>
+  database: <%= ENV['MONGOID_DATABASE'] %>
