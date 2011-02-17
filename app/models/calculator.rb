@@ -62,7 +62,7 @@ class Calculator
   end
   
   def steps
-    %w[employee absence production savings]    
+    %w[employee absence production summary]    
   end
   
   def next_step

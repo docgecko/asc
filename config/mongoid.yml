@@ -8,11 +8,11 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: fdc_development
+  database: asc_development
 
 test:
   <<: *defaults
-  database: fdc_test
+  database: asc_test
 
 # set these environment variables on your prod server
 production:

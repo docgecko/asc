@@ -63,6 +63,7 @@ a {
 
 ul.hmenu {
   float: right;
+  font-size: 10px;
   list-style: none;
   margin: 0 0 2em;
   padding: 0; }

@@ -4,7 +4,7 @@ Asc::Application.routes.draw do
 
   resources :users, :only => :show
 
-  resources :calculators
+  resources :calculators, :except => [:update]
   
   root :to => "calculators#new"
 

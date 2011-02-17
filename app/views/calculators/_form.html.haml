@@ -1,9 +1,10 @@
 = semantic_form_for @calculator do |f|
 
-	- if (controller.action_name == "edit")
-		= render "employee", :f => f
-		= render "absence", :f => f
-		= render "production", :f => f
+	- if controller.action_name == "edit"
+		= render 'employee', :f => f
+		= render 'absence', :f => f
+		= render 'production', :f => f
+		= render 'savings', :f => f
 	- else
 		= render "#{@calculator.current_step}", :f => f
 	

@@ -1,19 +1,89 @@
-%p
-	%b Total salaries:
-	= @calculator.salary
-%p
-	%b Total number of employees:
-	= @calculator.employee
-%p
-	%b Average sick days per year:
-	= @calculator.sick_days
-%p
-	%b Total lost revenue per year:
-	= @calculator.revenue
+%table
+	%tr
+		%td{:colspan => 2}
+			%h2 Employee Details
+	%tr
+		%td
+			%b Total Salary Costs:
+		%td
+			= number_to_currency @calculator.salary, :unit => "£"
+	%tr
+		%td
+			%b Total No. of Employees:
+		%td
+			= @calculator.employee
+			
+	%tr
+		%td{:colspan => 2}
+			%h2 Actual Absence and Sick Days
+	%tr
+		%td
+			%b Total Absence or Sick Days:
+		%td
+			= number_to_currency @calculator.sick_days, :unit => "£"
+	%tr
+		%td
+			%b Average Absence Days per Employee:
+		%td
+			= number_to_currency @calculator.average_sick_days, :unit => "£"
+			
+	%tr
+		%td{:colspan => 2}
+			%h2 Salary Costs of Absence and Sick Days
+	%tr
+		%td
+			%b Total Salary Cost of Absence or Sick Days:
+		%td
+			= number_to_currency @calculator.total_salary_sick_days, :unit => "£"
+	%tr
+		%td
+			%b Individual Employee Salary Cost of Absence or Sick Days:
+		%td
+			= number_to_currency @calculator.employee_salary_sick_days, :unit => "£"
+			
+	%tr
+		%td{:colspan => 2}
+			%h2 Sales, Business & Revenue Losses
+	%tr
+		%td
+			%b Total Sales & Revenue Losses:
+		%td
+			= number_to_currency @calculator.revenue, :unit => "£"
+	%tr
+		%td
+			%b Average Sales & Revenue Loss per Employee:
+		%td
+			= number_to_currency @calculator.revenue_employee, :unit => "£"
 
+	%tr
+		%td{:colspan => 2}
+			%h2 Savings Made by Reducing Absence-Sick Days
+	%tr
+		%td
+			%b Reduced Number of Absence or Sick Days per Employee:
+		%td
+			= @calculator.sick_days_reduction
+	%tr
+		%td
+			%b New Absence or Sick Days per Employee:
+		%td
+			= @calculator.new_sick_days
+	%tr
+		%td
+			%b Total Salary & Revenue Savings:
+		%td
+			= number_to_currency @calculator.total_savings, :unit => "£"
+	%tr
+		%td
+			%b Salary & Revenue Savings per Employee:
+		%td
+			= number_to_currency @calculator.employee_savings, :unit => "£"
+			
+
+%br/
 - if user_signed_in?
-	= link_to 'Edit', edit_calculator_path(@calculator)
-	\|
+	/ = link_to 'Edit', edit_calculator_path(@calculator)
+	/ \|
 	= link_to 'Back', calculators_path
 - else
 	= link_to 'Start again', root_url

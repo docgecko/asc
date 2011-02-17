@@ -6,6 +6,7 @@
     %th Total employees
     %th Average sick days
     %th Total lost revenue
+    %th Sick Days Reduction
     %th
     %th
     %th
@@ -16,8 +17,9 @@
       %td= calculator.employee
       %td= calculator.sick_days
       %td= calculator.revenue
+      %td= calculator.sick_days_reduction
       %td= link_to 'Show', calculator
-      %td= link_to 'Edit', edit_calculator_path(calculator)
+      / %td= link_to 'Edit', edit_calculator_path(calculator)
       %td= link_to 'Destroy', calculator, :confirm => 'Are you sure?', :method => :delete
 
 %br
