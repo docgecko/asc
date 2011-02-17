@@ -36,7 +36,6 @@ gem "haml", ">= 3.0.0"
 gem "haml-rails"
 # gem 'inherited_resources', '~> 1.2.1'
 gem 'formtastic', '~> 1.1.0'
-gem 'heroku', '1.17.13'
 
 group :development do
 	gem 'nifty-generators'
@@ -55,4 +54,4 @@ group :test do
 	gem "cucumber-rails"
 	gem "capybara"
 end
-gem "mocha", :group => :test
+# gem "mocha", :group => :test
