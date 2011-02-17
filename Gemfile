@@ -14,7 +14,7 @@ gem 'rails', '3.0.4'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
-gem 'ruby-debug19'
+# gem 'ruby-debug19'
 
 # Bundle the extra gems:
 # gem 'bj'
@@ -33,7 +33,7 @@ gem "mongoid", ">= 2.0.0.beta.19"
 gem "bson_ext", "~> 1.2"
 gem "devise", "~> 1.1.6"
 gem "haml", ">= 3.0.0"
-gem "haml-rails"
+# gem "haml-rails"
 # gem 'inherited_resources', '~> 1.2.1'
 gem 'formtastic', '~> 1.1.0'
 
