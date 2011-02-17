@@ -23,5 +23,4 @@ test:
 
 # set these environment variables on your prod server
 production:
-  <<: *defaults
   uri: mongodb://heroku:ym28h6ww0gxz5dq92o7v5e@flame.mongohq.com:27069/app446485
